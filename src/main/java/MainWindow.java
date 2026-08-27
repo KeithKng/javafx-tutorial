@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.AudioClip;
 /**
  * Controller for the main GUI.
  */
@@ -22,6 +23,7 @@ public class MainWindow extends AnchorPane {
 
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/DaUser.png"));
     private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/DaDuke.png"));
+    private AudioClip sendSound = new AudioClip(this.getClass().getResource("/sounds/send.wav").toString());
 
     @FXML
     public void initialize() {
@@ -40,6 +42,7 @@ public class MainWindow extends AnchorPane {
     @FXML
     private void handleUserInput() {
         String input = userInput.getText();
+        sendSound.play();
         String response = duke.getResponse(input);
         String commandType = duke.getCommandType();
         dialogContainer.getChildren().addAll(
