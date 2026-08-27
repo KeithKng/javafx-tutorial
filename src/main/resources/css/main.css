@@ -1,6 +1,9 @@
 .root {
-    main-color: rgb(237, 255, 242);       /* Create a looked-up color called "main-color" within root. */
+    main-color: rgb(237, 255, 242);
+    -fx-background-image: url("../images/background.jpg");
     -fx-background-color: main-color;
+    -fx-background-size: 400px 100%;
+    -fx-background-repeat: repeat stretch;
 }
 
 .text-field {
@@ -23,10 +26,15 @@
     -fx-font-size: 20px;
 }
 
-.scroll-pane,
+.scroll-pane {
+    -fx-background-color: rgba(0,0,0,.5);
+}
+
 .scroll-pane .viewport {
     -fx-background-color: transparent;
 }
+
+
 
 .scroll-bar {
     -fx-font-size: 10px;  /* Change width of scroll bar. */
